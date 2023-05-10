@@ -23,13 +23,13 @@ public class ControllingSelectedObj : MonoBehaviour
     }
     private void OnMouseDrag()
     {
-        if (MakeObj.playerStat == PlayMoods.drag)
+        if (PlayerController.playerStat == PlayMoods.dragOrEdit)
         {
             Vector3 c = Camera.main.ScreenToWorldPoint(Input.mousePosition - mousePos);
             transform.position = new Vector3(c.x, transform.position.y, c.z);
         }
 
-        if (MakeObj.playerStat == PlayMoods.rotate)
+        if (PlayerController.playerStat == PlayMoods.rotate)
         {
             float turnX = Input.GetAxis("Mouse X") * 2f;
             float turnY = Input.GetAxis("Mouse Y") * 2f;

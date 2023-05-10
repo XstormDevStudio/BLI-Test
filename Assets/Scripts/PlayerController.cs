@@ -11,26 +11,22 @@ public enum ObjTypeToCreate
 public enum PlayMoods
 {
     create,
-    drag,
-    edit,
+    dragOrEdit,
     rotate
 }
 
-public class MakeObj : MonoBehaviour //This script named as player handeller...!
+public class PlayerController : MonoBehaviour 
 {
     [SerializeField] private GameObject _sphere;
     [SerializeField] private GameObject _cube;
-    [SerializeField] private GameObject editMode;//obj color palat
+    [SerializeField] private GameObject editMode;
     public Transform currentSelectedObj;
 
     public static ObjTypeToCreate currentObj;
     public static PlayMoods playerStat;
     private bool toggleRotateMode;
-    [SerializeField] private GameObject selectionObj;
-
 
     public List<ObjectData> savedObjs = new();
-
 
     private void Update()
     {
@@ -74,7 +70,7 @@ public class MakeObj : MonoBehaviour //This script named as player handeller...!
             }
             if (hitInfo.transform.gameObject.tag == "obj" && playerStat != PlayMoods.rotate)
             {
-                playerStat = PlayMoods.drag;
+                playerStat = PlayMoods.dragOrEdit;
                 currentSelectedObj = hitInfo.transform;
             }
         }
@@ -82,7 +78,7 @@ public class MakeObj : MonoBehaviour //This script named as player handeller...!
 
     public void OnChangingMatColor()
     {
-        if (playerStat == PlayMoods.drag)
+        if (playerStat == PlayMoods.dragOrEdit)
         {
             Color selectColor = UnityEngine.Random.ColorHSV();
             currentSelectedObj.GetComponent<MeshRenderer>().material.color = selectColor;
@@ -95,7 +91,7 @@ public class MakeObj : MonoBehaviour //This script named as player handeller...!
         toggleRotateMode = !isTogg;
 
         if (isTogg) playerStat = PlayMoods.rotate;
-        else playerStat = PlayMoods.drag;
+        else playerStat = PlayMoods.dragOrEdit;
     }
 
 }

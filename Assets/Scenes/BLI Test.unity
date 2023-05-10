@@ -781,11 +781,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 957636581}
-  - component: {fileID: 957636582}
   - component: {fileID: 957636583}
-  - component: {fileID: 957636584}
   m_Layer: 0
-  m_Name: Accesor
+  m_Name: ObjSelection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -804,27 +802,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &957636582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 957636580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 826b60ab3944d54479bfdb0bbf0b0f50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sphere: {fileID: 5592395473937045355, guid: 60ba928e2117ebd4293cf9e8586be99b, type: 3}
-  _cube: {fileID: 6099141480579148026, guid: 09d9dab2c1d863e4681e7e4d9ea8e429, type: 3}
-  editMode: {fileID: 0}
-  currentSelectedObj: {fileID: 0}
-  selectionObj: {fileID: 0}
-  all: []
-  allPos: []
 --- !u!114 &957636583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -835,18 +814,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d14f333ff4b2ce64d9f1a6ff4619e514, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &957636584
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 957636580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c60569e0ff6a5224a81e5cccf8bced54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1383410622
@@ -933,8 +900,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 957636582}
-        m_TargetAssemblyTypeName: MakeObj, Assembly-CSharp
+      - m_Target: {fileID: 1452092570}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: OnChangingMatColor
         m_Mode: 1
         m_Arguments:
@@ -1051,6 +1018,55 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1452092568
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1452092569}
+  - component: {fileID: 1452092570}
+  m_Layer: 0
+  m_Name: PlayerController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1452092569
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452092568}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.383628, y: -5.8669863, z: -0.28038353}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1452092570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452092568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 826b60ab3944d54479bfdb0bbf0b0f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sphere: {fileID: 5592395473937045355, guid: 60ba928e2117ebd4293cf9e8586be99b, type: 3}
+  _cube: {fileID: 6099141480579148026, guid: 09d9dab2c1d863e4681e7e4d9ea8e429, type: 3}
+  editMode: {fileID: 0}
+  currentSelectedObj: {fileID: 0}
+  savedObjs: []
 --- !u!1 &1499968339
 GameObject:
   m_ObjectHideFlags: 0
@@ -1587,6 +1603,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2656cc317463d744181d8ac254d519c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerController: {fileID: 1452092570}
+  objTypeSelect: {fileID: 957636583}
 --- !u!4 &1987051803
 Transform:
   m_ObjectHideFlags: 0
@@ -1600,5 +1618,5 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

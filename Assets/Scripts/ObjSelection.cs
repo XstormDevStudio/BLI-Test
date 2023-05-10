@@ -5,10 +5,10 @@ public class ObjSelection : MonoBehaviour
 {
     public void OnClickCube()
     {
-        MakeObj.currentObj = ObjTypeToCreate.cube;
+        PlayerController.currentObj = ObjTypeToCreate.cube;
     }
     public void OnClickSphere()
     {
-        MakeObj.currentObj = ObjTypeToCreate.sphere;
+        PlayerController.currentObj = ObjTypeToCreate.sphere;
     }
 }
